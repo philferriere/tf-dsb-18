@@ -325,6 +325,7 @@ class DSB18Dataset(object):
         """
         # Create paths files and load them back in
         self._create_ID_files()
+        self._load_ID_files()
 
         # Combine masks in a single label
         self._combine_masks()
@@ -336,7 +337,7 @@ class DSB18Dataset(object):
         self._generate_dwt_maps()
 
         # Load ID files
-        self._load_ID_files()
+        # self._load_ID_files()
 
 
     def _create_ID_files(self):
@@ -346,7 +347,7 @@ class DSB18Dataset(object):
         sampler_options = {}
         for k, v in _DEFAULT_SAMPLING_OPTIONS.items():
             sampler_options[k] = self.options[k]
-        smplr = Sampler(options=sampler_options)
+        smplr = Sampler(ds_root = self._ds_root, options=sampler_options)
 
         # Get train/val/test splits
         self._train_IDs = smplr.train_IDs.copy()
