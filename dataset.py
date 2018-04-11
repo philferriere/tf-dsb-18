@@ -334,7 +334,7 @@ class DSB18Dataset(object):
         self._combine_contours()
 
         # Compute deep watershed transform maps (discretized distance transform + normalized gradients)
-        self._generate_dwt_maps()
+        # self._generate_dwt_maps()
 
         # Load ID files
         # self._load_ID_files()
