@@ -61,9 +61,9 @@ from augment import Augmenter, _DEFAULT_AUG_OPTIONS
 from sampling import Sampler, _DEFAULT_SAMPLING_OPTIONS
 
 if sys.platform.startswith("win"):
-    _DSB18_DATASET = "E:/datasets/dsb18.alt"
+    _DSB18_DATASET = "E:/datasets/dsb18.retrain"
 else:
-    _DSB18_DATASET = '/media/EDrive/datasets/dsb18.alt'
+    _DSB18_DATASET = '/media/EDrive/datasets/dsb18.retrain'
 
 _DBG_TRAIN_VAL_TEST_SETS = -1
 
@@ -2133,3 +2133,10 @@ class DSB18Dataset(object):
 #         for ID in _test_IDs:
 #             f.write('{}\n'.format(str(ID)))
 #
+
+# if __name__ == '__main__':
+
+#     options = _DEFAULT_DS_NUCLEI_TRAIN_OPTIONS.copy()
+#     options['sampling'] = 'normal'
+#     ds = DSB18Dataset(ds_root=_DSB18_DATASET, options=options)
+#     ds.print_config()
